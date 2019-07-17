@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    triggers {
-        pollSCM('*/10 * * * *')
-    }
-
     environment {
         IMAGE_NAME = 'jakemorgan/hugo'
         DOCKER_USERNAME = credentials('docker-username')
