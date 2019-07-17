@@ -1,3 +1,3 @@
 # Hugo Docker Container
 
-[![Build Status](https://jenkins.jakemorgan.io/job/hugo/job/master/badge/icon)](https://jenkins.jakemorgan.io/job/hugo/job/master/)
+[![Build Status](https://jenkins.jakemorgan.io/buildStatus/icon?job=hugo%2Fmaster)](https://jenkins.jakemorgan.io/job/hugo/job/master/)
