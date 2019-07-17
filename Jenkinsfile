@@ -2,11 +2,13 @@ pipeline {
     agent any
 
     triggers {
-        pollSCM('*/2 * * * *')
+        pollSCM('*/10 * * * *')
     }
 
     environment {
         IMAGE_NAME = 'jakemorgan/hugo'
+        DOCKER_USERNAME = credentials('docker-username')
+        DOCKER_PASSWORD = credentials('docker-password')
     }
 
     stages {
@@ -16,11 +18,12 @@ pipeline {
                 sh 'docker build -t ${IMAGE_NAME}:latest .'
             }
         }
-        // stage('Push') {
-        //     steps {
-        //         echo 'Push..'
-        //         sh 'docker push ${IMAGE_NAME}'
-        //     }
-        // }
+        stage('Push') {
+            steps {
+                echo 'Push..'
+                sh 'docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}'
+                sh 'docker push ${IMAGE_NAME}'
+            }
+        }
     }
 }
