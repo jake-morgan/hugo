@@ -21,7 +21,7 @@ pipeline {
         stage('Push') {
             steps {
                 echo 'Push..'
-                sh 'docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}'
+                sh '${DOCKER_PASSWORD} | docker login --username ${DOCKER_USERNAME} --password-stdin'
                 sh 'docker push ${IMAGE_NAME}'
             }
         }
