@@ -6,7 +6,7 @@ RUN apt-get -q update -y && apt-get -q upgrade -y
 RUN apt-get -q install -y python-pygments git curl
 
 # Configuration variables
-ENV HUGO_VERSION 0.55.6
+ENV HUGO_VERSION 0.58.3
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
 ENV SITE_DIR '/usr/share/blog'
 
