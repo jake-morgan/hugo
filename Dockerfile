@@ -16,7 +16,7 @@ RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debia
 RUN apt-get -q update -y && apt-get -q install -y docker-ce docker-ce-cli containerd.io
 
 # Configuration variables
-ENV HUGO_VERSION 0.58.3
+ENV HUGO_VERSION 0.61.0
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
 ENV SITE_DIR '/usr/share/blog'
 
